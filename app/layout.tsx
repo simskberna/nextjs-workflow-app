@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import AuthProvider from "./context/AuthProvider";
-import Navbar from "@/components/navbar";
-import NavbarProvider from "./context/NavbarProvider";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { auth } from "@/auth";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,14 +33,31 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarTrigger />
-            {/* <NavbarProvider /> */}
-            {children}
-          </SidebarProvider>
+          <AuthContent>{children}</AuthContent>
         </AuthProvider>
       </body>
     </html>
   );
 }
+
+const AuthContent = async ({ children }: { children: React.ReactNode }) => {
+  const session = await auth();
+  return (
+    <>
+      {session ? (
+        <>
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarTrigger
+              style={{ marginTop: 12, paddingLeft: 4, paddingTop: 10 }}
+              disabledOnDesktop
+            />
+            {children}
+          </SidebarProvider>
+        </>
+      ) : (
+        <>{children}</>
+      )}
+    </>
+  );
+};

@@ -3,18 +3,18 @@ import Link from "next/link";
 
 const Splash = () => {
   const menu = [
-    { name: 'About', link: '/' },
-    { name: 'Features', link: '/' },
-    { name: 'How to use', link: '/' },
+    { name: "About", link: "/" },
+    { name: "Features", link: "/" },
+    { name: "How to use", link: "/" },
   ];
 
   return (
     <div
       className="xs:p-10 sm:p-20 items-start justify-start min-h-screen font-[family-name:var(--font-geist-sans)] animate-fade-in"
       style={{
-        backgroundImage: 'url(/assets/splash_bg.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: "url(/assets/splash_bg.svg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="splash-header flex xs:flex-col md:flex-row gap-y-5 w-full items-center justify-between">
@@ -52,7 +52,9 @@ const Splash = () => {
 
       <div className="splash-body grid xs:grid-cols-1 md:grid-cols-2 min-h-[70vh] animate-scale-up">
         <div className="flex flex-col justify-center md:items-start xs:items-center w-full">
-          <h1 className="text-white xs:text-[40px] md:text-[72px] font-bold">TaskTide</h1>
+          <h1 className="text-white xs:text-[40px] md:text-[72px] font-bold">
+            TaskTide
+          </h1>
           <span className="opacity-[0.7] xs:text-xl md:text-3xl text-white text-left md:max-w-[400px] xs:max-w-[300px]">
             Create your workflow with easier ways.
           </span>
@@ -72,7 +74,7 @@ const Splash = () => {
           </div>
         </div>
       </div>
-  
+
       <div className="splash-footer bg-gray-800 text-white py-6 mt-16 animate-fade-in">
         <div className="mx-auto px-4 text-center">
           <div className="w-full flex justify-center my-2">
@@ -94,7 +96,9 @@ const Splash = () => {
               Terms of Service
             </Link>
           </div>
-          <p className="text-sm opacity-70">© 2024 TaskTide. All rights reserved.</p>
+          <p className="text-sm opacity-70">
+            © 2024 TaskTide. All rights reserved.
+          </p>
         </div>
       </div>
     </div>

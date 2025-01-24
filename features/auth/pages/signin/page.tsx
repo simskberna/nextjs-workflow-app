@@ -18,11 +18,10 @@ import {
   handleCredentialsSignin,
   handleGithubSignin,
 } from "@/app/actions/authActions";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ErrorMessage from "@/components/error-message";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import EmailIcon from "@/components/ui/icons/EmailIcon";
 import PasswordIcon from "@/components/ui/icons/PasswordIcon";
 
@@ -30,20 +29,6 @@ type Props = {};
 
 const SignIn = (props: Props) => {
   const [globalError, setGlobalError] = useState<string>("");
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
@@ -65,7 +50,7 @@ const SignIn = (props: Props) => {
   };
 
   return (
-    <div className="flex xs:flex-col md:flex-row items-center justify-between min-h-screen">
+    <div className="w-full flex xs:flex-col md:flex-row items-center justify-between min-h-screen">
       <div
         className="left-sect flex-[1.5] w-full min-h-screen xs:hidden md:flex items-center justify-center p-4"
         style={{
@@ -89,16 +74,16 @@ const SignIn = (props: Props) => {
       </div>
 
       <div className='right-sect flex-1 w-full flex justify-center p-4 mx-5 xs:bg-[url("/assets/auth_bg.svg")] md:bg-none'>
-        <Card className="md:border-none md:shadow-none w-full max-w-md flex flex-col items-start justify-center xs:bg-transparent md:bg-white">
+        <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-center md:text-gray-800 xs:text-white">
+            <CardTitle className="text-3xl font-bold text-left text-gray-80">
               Hello Again!
             </CardTitle>
             <span className="text-md text-start text-gray-400">
               Welcome back
             </span>
           </CardHeader>
-          <CardContent className="w-full px-10">
+          <CardContent className="w-full">
             {globalError && <ErrorMessage error={globalError} />}
             <Form {...form}>
               <form
@@ -113,12 +98,10 @@ const SignIn = (props: Props) => {
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
-                          className="px-12 py-7 rounded-full xs:border-white md:border-[#A9A9A9] opacity-[0.7]"
+                          className="px-12 py-7 rounded-full border-[#A9A9A9] opacity-[0.7]"
                           type="email"
                           placeholder="Email Address"
-                          icon={
-                            <EmailIcon color={isMobile ? "white" : "#a9a9a9"} />
-                          }
+                          icon={<EmailIcon color="#a9a9a9" />}
                           autoComplete="off"
                           {...field}
                         />
@@ -137,13 +120,9 @@ const SignIn = (props: Props) => {
                       <FormControl>
                         <Input
                           type="password"
-                          className="px-12 py-7 rounded-full xs:border-white md:border-[#A9A9A9] opacity-[0.7]"
+                          className="px-12 py-7 rounded-full border-[#A9A9A9] opacity-[0.7]"
                           placeholder="Password"
-                          icon={
-                            <PasswordIcon
-                              color={isMobile ? "white" : "#a9a9a9"}
-                            />
-                          }
+                          icon={<PasswordIcon color="#a9a9a9" />}
                           {...field}
                         />
                       </FormControl>
@@ -152,7 +131,9 @@ const SignIn = (props: Props) => {
                   )}
                 />
 
-                <LoadingButton pending={form.formState.isSubmitting} />
+                <LoadingButton pending={form.formState.isSubmitting}>
+                  Sign in
+                </LoadingButton>
               </form>
             </Form>
             <span className="text-sm text-grayp-500 text-center block my-2">
