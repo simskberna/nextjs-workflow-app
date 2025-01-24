@@ -86,3 +86,20 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.mobile-col-desktop-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+}
+.m-flex-start {
+  justify-content: flex-start !important;
+}
+
+@media (min-width: 768px) {
+  .mobile-col-desktop-row {
+    flex-direction: row;
+  }
+  .m-flex-start {
+    justify-content: flex-end !important;
+  }
+}

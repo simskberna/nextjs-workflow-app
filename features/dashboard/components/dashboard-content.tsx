@@ -3,7 +3,8 @@ import { useState } from "react";
 import Board from "../pages/board/page";
 import CustomCard from "./custom-card";
 import { Task } from "@/types/dashboard";
-import { Edit, Trash2 } from "lucide-react";
+import { Edit, Trash2, List, Grid3X3, Grid } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Dashboard = () => {
   const [tabs, setTabs] = useState([
@@ -24,31 +25,128 @@ const Dashboard = () => {
     { status: "completed", title: "Test 10", tag: "#4455" },
   ];
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
-        gap: "16px",
-        padding: "16px",
-      }}
-    >
-      {tasks.map((task: Task) => (
-        <CustomCard
-          key={task.tag}
-          {...task}
-          dotOptions={[
-            {
-              ic: <Edit width={16} height={16} color="#2d1968" />,
-              title: "Edit",
-            },
-            {
-              ic: <Trash2 width={20} height={20} color="#af3e3e" />,
-              title: "Delete",
-            },
-          ]}
-        />
-      ))}
-    </div>
+    <>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          paddingLeft: 20,
+          paddingRight: 20,
+        }}
+        className="mobile-col-desktop-row"
+      >
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+          }}
+          className="mobile-col-desktop-row"
+        >
+          <h1 style={{ fontSize: 24 }}>Boards</h1>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+              gap: 10,
+            }}
+            className="tabs m-flex-start"
+          >
+            <Button
+              style={{
+                padding: 0,
+                background: "transparent",
+                boxShadow: "none",
+                color: "white",
+              }}
+            >
+              Button 1
+            </Button>
+            <Button
+              style={{
+                padding: 0,
+                background: "transparent",
+                boxShadow: "none",
+                color: "white",
+              }}
+            >
+              Button 2
+            </Button>
+            <Button
+              style={{
+                padding: 0,
+                background: "transparent",
+                boxShadow: "none",
+                color: "white",
+              }}
+            >
+              Button 3
+            </Button>
+          </div>
+        </div>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            gap: 20,
+          }}
+          className="m-flex-start"
+        >
+          <Button
+            style={{
+              padding: 0,
+              color: "white",
+              background: "transparent",
+              boxShadow: "unset",
+            }}
+          >
+            <List /> List
+          </Button>
+          <Button
+            style={{
+              padding: 0,
+              color: "white",
+              background: "transparent",
+              boxShadow: "unset",
+            }}
+          >
+            <Grid3X3 /> Grid
+          </Button>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
+          gap: "16px",
+          padding: "16px",
+        }}
+      >
+        {tasks.map((task: Task) => (
+          <CustomCard
+            key={task.tag}
+            {...task}
+            dotOptions={[
+              {
+                ic: <Edit width={16} height={16} color="#2d1968" />,
+                title: "Edit",
+              },
+              {
+                ic: <Trash2 width={20} height={20} color="#af3e3e" />,
+                title: "Delete",
+              },
+            ]}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 export default Dashboard;
