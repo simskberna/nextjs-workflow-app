@@ -19,8 +19,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        custom_card:{
+          DEFAULT: "hsl(var(--card-custom))",
+          border: "hsl(var(--card-custom-border))",
+        },
+        custom_card_inner:{
+          DEFAULT: "hsl(var(--card-custom-inner))",
+        },
         tab: {
-          DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
         popover: {

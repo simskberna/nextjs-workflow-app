@@ -15,22 +15,9 @@ type Props = {
 
 const CustomCard = (props: Props) => {
   return (
-    <Card
-      style={{
-        background: "#1C1C1C",
-        borderRadius: 24,
-        border: "1px solid #ffffff3d",
-      }}
+    <Card className='bg-custom_card border border-custom_card-border drop-shadow-lg rounded-3xl'
     >
-      <CardHeader
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 5,
-        }}
+      <CardHeader className='w-full flex flex-row items-center justify-between gap-1.5'
       >
         <div className="w-full">
           <CardTitle
@@ -66,20 +53,19 @@ const CustomCard = (props: Props) => {
               background: "transparent",
             }}
           >
-            <Expand width={17} height={17} />
+            <Expand width={17} height={17} className="text-foreground" />
             <CustomPopover
               options={props.dotOptions}
-              icon={<EllipsisVerticalIcon width={17} height={17} />}
+              icon={<EllipsisVerticalIcon width={17} height={17} className="text-foreground"/>}
             />
           </div>
         </CardContent>
       </CardHeader>
-      <CardContent
+      <CardContent  className="bg-custom_card_inner"
         style={{
           paddingTop: 5,
           margin: 10,
           borderRadius: 24,
-          background: "#242424",
         }}
       >
         <div className="inner-top flex flex-col items-start justify-start">
