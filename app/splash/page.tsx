@@ -18,7 +18,7 @@ const Splash = () => {
       }}
     >
       <div className="splash-header flex xs:flex-col md:flex-row gap-y-5 w-full items-center justify-between">
-        <Link href="/splash">
+        <Link href="/auth/splash">
           <Image
             alt="logo-light"
             width={322}
@@ -27,7 +27,7 @@ const Splash = () => {
             className="xs:hidden lg:block"
           />
         </Link>
-        <Link href="/splash">
+        <Link href="/auth/splash">
           <Image
             alt="mobile-logo"
             width={180}
@@ -60,13 +60,13 @@ const Splash = () => {
           </span>
           <div className="flex gap-5 justify-start items-center my-10">
             <Link
-              href="/signup"
+              href="/auth/signup"
               className="text-white text-lg p-4 rounded-sm bg-default-blue min-w-[150px] flex items-center justify-center transition-colors duration-300 hover:bg-blue-700"
             >
               Sign Up
             </Link>
             <Link
-              href="/signin"
+              href="/auth/signin"
               className="text-white text-lg p-4 rounded-md border border-white min-w-[150px] flex items-center justify-center transition-colors duration-300 hover:bg-[#0c1525]"
             >
               Sign In

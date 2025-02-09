@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
-import Dashboard from "@/features/dashboard/components/dashboard-content";
-import Navbar from "@/components/ui/navbar";
+import Dashboard from "@/app/dashboard/components/dashboard-content";
+import Navbar from "@/app/components/ui/navbar";
 
 export default async function Home() {
   const session = await auth();

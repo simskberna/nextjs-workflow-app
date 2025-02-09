@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../styles/globals.css";
 import AuthProvider from "./context/AuthProvider";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/app/components/ui/sidebar";
+import { AppSidebar } from "@/app/components/app-sidebar";
 import { auth } from "@/auth";
 
 const geistSans = localFont({

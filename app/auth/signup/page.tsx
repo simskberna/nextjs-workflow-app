@@ -1,6 +1,6 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card";
+import { Input } from "@/app/components/ui/input";
 import {
   Form,
   FormControl,
@@ -8,21 +8,21 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/app/components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
-import LoadingButton from "@/components/loading-button";
+import LoadingButton from "@/app/components/loading-button";
 import { useState } from "react";
-import ErrorMessage from "@/components/error-message";
+import ErrorMessage from "@/app/components/error-message";
 import { signUpSchema } from "@/lib/zod";
 import {
   handleCredentialsSignin,
   handleSignUp,
 } from "@/app/actions/authActions";
 import Link from "next/link";
-import PasswordIcon from "@/components/ui/icons/PasswordIcon";
-import EmailIcon from "@/components/ui/icons/EmailIcon";
+import PasswordIcon from "@/app/components/ui/icons/PasswordIcon";
+import EmailIcon from "@/app/components/ui/icons/EmailIcon";
 import { UserIcon } from "lucide-react";
 
 const SignUp = () => {
@@ -71,7 +71,7 @@ const SignUp = () => {
           </span>
           <Link
             className="shadow-xl mt-5 rounded-full h-[50px] flex items-center justify-center text-md bg-navy-blue text-white p-4 transition-colors hover:bg-blue-700"
-            href="/"
+            href="/public"
           >
             Read More
           </Link>

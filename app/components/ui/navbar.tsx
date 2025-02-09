@@ -3,8 +3,8 @@ import { Input } from "./input";
 import { Search } from "lucide-react";
 import { Switch } from "./switch";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
-import { useTheme } from "@/hooks/use-theme";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useTheme } from "@/app/hooks/use-theme";
+import { useIsMobile } from "@/app/hooks/use-mobile";
 
 type Props = {
   userName: string;

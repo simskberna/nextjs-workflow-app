@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent } from "@/components/ui/popover";
+import { Button } from "@/app/components/ui/button";
+import { Popover, PopoverContent } from "@/app/components/ui/popover";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import React from "react";
 type Option = {

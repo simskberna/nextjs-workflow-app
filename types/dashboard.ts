@@ -3,3 +3,7 @@ export type Task = {
   title: string;
   tag: string;
 };
+export type Tab = {
+  title:string;
+  isActive:boolean;
+}

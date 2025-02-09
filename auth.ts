@@ -5,8 +5,8 @@ import GitHub from "next-auth/providers/github";
 import prisma from "./lib/prisma";
 import bcrypt from "bcryptjs";
 
-const publicRoutes = ["/signin", "/signup", "/splash"];
-const authRoutes = ["/signin", "/signup", "/splash"];
+const publicRoutes = ["/auth/signin", "/auth/signup", "/splash"];
+const authRoutes = ["/auth/signin", "/auth/signup", "/splash"];
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -107,6 +107,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
   },
   pages: {
-    signIn: "/signin",
+    signIn: "/auth/signin",
   },
 });

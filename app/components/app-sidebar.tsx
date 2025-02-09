@@ -19,7 +19,7 @@ import {
   SidebarMenuSubItem,
   SidebarTrigger,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from "@/app/components/ui/sidebar";
 import Image from "next/image";
 import {
   Collapsible,
@@ -87,7 +87,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               marginBottom: 20,
             }}
           >
-            <Link href="/">
+            <Link href="/public">
               <Image src={logoImage} width={175} height={35} alt="logo" />
             </Link>
           </SidebarGroupLabel>
