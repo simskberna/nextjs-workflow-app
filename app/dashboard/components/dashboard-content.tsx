@@ -3,7 +3,7 @@ import CustomCard from "./custom-card";
 import { Task,Tab } from "@/types/dashboard";
 import { Edit, Trash2, List, Grid3X3 } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-import {useState} from "react";
+import { useState } from "react";
 
 const Dashboard = () => {
 
@@ -37,23 +37,13 @@ const Dashboard = () => {
       setDisplayType(display);
   }
 
-
-
     return (
     <>
       <div
-        style={{
-          display: "flex",
-          width: "100%",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          paddingLeft: 20,
-          paddingRight: 20,
-        }}
-        className="mobile-col-desktop-row"
+        className="mobile-col-desktop-row flex w-full items-end justify-center px-[20px]"
       >
         <div
-          className="mobile-col-desktop-row flex w-[50%] justify-center items-end"
+          className="mobile-col-desktop-row flex xs:w-full lg:w-[50%] justify-center items-end"
         >
           <h1 style={{ fontSize: 24 }}>Boards</h1>
           <div
@@ -72,14 +62,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            gap:15
-          }}
-          className="m-flex-start"
+          className="m-flex-start w-full gap-4 flex justify-end items-end"
         >
             <Button
                   value='grid'
@@ -97,7 +80,7 @@ const Dashboard = () => {
       </div>
       <div
         style={{
-          display: "grid",
+          display: displayType === 'grid' ? "grid" : "block",
           gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
           gap: "16px",
           padding: "16px",
@@ -105,18 +88,19 @@ const Dashboard = () => {
       >
         {tasks.map((task: Task) => (
           <CustomCard
-            key={task.tag}
-            {...task}
-            dotOptions={[
-              {
-                ic: <Edit width={16} height={16} color="#2d1968" />,
-                title: "Edit",
-              },
-              {
-                ic: <Trash2 width={20} height={20} color="#af3e3e" />,
-                title: "Delete",
-              },
-            ]}
+              className={`${displayType === 'list' && 'mb-4'}`}
+              key={task.tag}
+              {...task}
+              dotOptions={[
+                {
+                  ic: <Edit width={16} height={16} color="#2d1968" />,
+                  title: "Edit",
+                },
+                {
+                  ic: <Trash2 width={20} height={20} color="#af3e3e" />,
+                  title: "Delete",
+                },
+              ]}
           />
         ))}
       </div>

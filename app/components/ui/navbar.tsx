@@ -36,8 +36,8 @@ const Navbar = (props: Props) => {
       <div className="flex gap-8 items-center justify-end">
         <Switch checked={theme === "dark"} onCheckedChange={toggleTheme} />
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>{firstLetter + secondLetter}</AvatarFallback>
+          <AvatarImage src="" />
+          <AvatarFallback className='bg-orange-400'>{firstLetter + secondLetter}</AvatarFallback>
         </Avatar>
       </div>
     </div>

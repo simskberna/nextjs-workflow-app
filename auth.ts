@@ -77,12 +77,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (publicRoutes.includes(pathname)) {
         return true;
       }
-      if (authRoutes.includes(pathname)) {
-        if (isLoggedIn) {
-          return Response.redirect(new URL("/", nextUrl));
-        }
-        return true;
-      }
+
 
       // if(pathname.startsWith('/something') && role !== 'admin'){
       //     return Response.redirect(new URL('/',nextUrl));

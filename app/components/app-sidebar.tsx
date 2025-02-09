@@ -43,9 +43,9 @@ const items = [
     ],
   },
   {
-    title: "Analytics",
+    title: "Insights",
     icon: ChartPie,
-    items: [{ title: "Overview", url: "#", icon: null }],
+    items: [{ title: "Overview", url: "/insights/overview", icon: null }],
   },
 ];
 
@@ -87,7 +87,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               marginBottom: 20,
             }}
           >
-            <Link href="/public">
+            <Link href="/">
               <Image src={logoImage} width={175} height={35} alt="logo" />
             </Link>
           </SidebarGroupLabel>

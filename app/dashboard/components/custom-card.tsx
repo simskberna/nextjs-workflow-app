@@ -2,11 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/ca
 import { Expand, EllipsisVerticalIcon } from "lucide-react";
 import React from "react";
 import CustomPopover from "./custom-popover";
+import {cn} from "@/lib/utils";
 
 type Props = {
   status: string;
   title: string;
   tag: string;
+  className?: string;
   dotOptions?: Array<{
     ic?: React.ReactNode;
     title: string;
@@ -15,22 +17,13 @@ type Props = {
 
 const CustomCard = (props: Props) => {
   return (
-    <Card className='bg-custom_card border border-custom_card-border drop-shadow-lg rounded-3xl'
+    <Card className={cn('bg-custom_card border border-custom_card-border drop-shadow-lg rounded-3xl', props?.className)}
     >
       <CardHeader className='w-full flex flex-row items-center justify-between gap-1.5'
       >
         <div className="w-full">
           <CardTitle
-            style={{
-              maxWidth: "80px",
-              backgroundColor: "rgb(0, 208,255,10%)",
-              color: "rgb(0, 208,255,100%)",
-              borderRadius: 20,
-              fontSize: 12,
-              fontWeight: "400",
-              textAlign: "center",
-              padding: 5,
-            }}
+              className="max-w-[80px] bg-custom_card-status_background text-custom_card-status_foreground rounded-[20px] text-[12px] font-normal text-center"
           >
             {props.status}
           </CardTitle>
@@ -61,7 +54,7 @@ const CustomCard = (props: Props) => {
           </div>
         </CardContent>
       </CardHeader>
-      <CardContent  className="bg-custom_card_inner"
+      <CardContent className="bg-custom_card_inner"
         style={{
           paddingTop: 5,
           margin: 10,

@@ -13,6 +13,8 @@ body {
     --card-custom:0 0% 80%;
     --card-custom-inner:0, 0%, 86%;
     --card-custom-border:0, 0%, 0%, 0.21;
+    --card-status-foreground:245, 100%, 27%;
+    --card-status-background:245, 100%, 27%, 0.1;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -30,6 +32,7 @@ body {
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
+    --chart-custom: 0, 0%, 82.35%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -51,6 +54,9 @@ body {
     --card-custom:0, 0%, 11%;
     --card-custom-inner:0 0% 14%;
     --card-custom-border:0, 0%, 100%, 0.24;
+    --card-status-foreground:191, 100%, 50%;
+    --chart-custom: 0, 0%, 18.43%;
+    --card-status-background:191, 100%, 50%, 0.1;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;

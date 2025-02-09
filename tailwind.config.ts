@@ -22,6 +22,8 @@ export default {
         custom_card:{
           DEFAULT: "hsl(var(--card-custom))",
           border: "hsl(var(--card-custom-border))",
+          status_foreground: "hsl(var(--card-status-foreground))",
+          status_background: "hsl(var(--card-status-background))",
         },
         custom_card_inner:{
           DEFAULT: "hsl(var(--card-custom-inner))",
@@ -56,6 +58,7 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        chart_custom:"hsl(var(--chart-custom))",
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",
