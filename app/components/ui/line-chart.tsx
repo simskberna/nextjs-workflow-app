@@ -17,6 +17,9 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
     },[])
     const gridLineColor = theme === 'dark' ? 'rgba(240, 240, 240, 0.09)' : 'rgba(0, 0, 0, 0.1)';
     const labelColor = theme === 'dark' ? '#A3A3A3' : '#3D3D3D';
+
+    //!!todo change the legend colors when the theme is dark bc it does look like it appears right now
+    
     return (
         <ResponsiveLine
             data={data}
