@@ -17,9 +17,9 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
     },[])
     const gridLineColor = theme === 'dark' ? 'rgba(240, 240, 240, 0.09)' : 'rgba(0, 0, 0, 0.1)';
     const labelColor = theme === 'dark' ? '#A3A3A3' : '#3D3D3D';
+    const tooltipTextColor = theme === 'dark' ? '#A3A3A3' : '#3D3D3D';
+    const legendTitleColor = theme === 'dark' ? 'rgba(240, 240, 240, 0.09)' : 'rgba(0, 0, 0, 0.1)';
 
-    //!!todo change the legend colors when the theme is dark bc it does look like it appears right now
-    
     return (
         <ResponsiveLine
             data={data}
@@ -103,7 +103,21 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
                         strokeWidth: 1,
                     }
                 },
+                legends: {
+                    title: {
+                        text: {
+                            fill: legendTitleColor,
+                        },
+                    },
+                },
             }}
+            tooltip={({ point }) => (
+                <div style={{ color: tooltipTextColor, padding: '10px', backgroundColor: theme === 'dark' ? '#333' : '#fff', borderRadius: '4px' }}>
+                    <strong>{point.serieId}</strong>
+                    <br />
+                    {point.data.xFormatted}: {point.data.yFormatted}
+                </div>
+            )}
         />
     )
 }
