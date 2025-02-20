@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="439eba92-8b99-41bf-bda6-04607e848cf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/__tests__/Button.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jest.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jest.setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ui/line-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/line-chart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/insights/overview/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/insights/overview/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +105,8 @@
       <workItem from="1739251078814" duration="161000" />
       <workItem from="1739897423914" duration="1774000" />
       <workItem from="1739910493372" duration="8000" />
-      <workItem from="1740039935910" duration="1304000" />
+      <workItem from="1740039935910" duration="1357000" />
+      <workItem from="1740041422735" duration="224000" />
     </task>
     <servers />
   </component>

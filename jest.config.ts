@@ -1,19 +1,18 @@
 module.exports = {
-    preset: 'ts-jest/presets/js-with-ts',  // Use the preset for JS and TS support
+    preset: 'ts-jest/presets/js-with-ts',
     testEnvironment: 'jest-environment-jsdom',
     transform: {
-        '^.+\\.(ts|tsx)$': 'ts-jest', // Transform TypeScript files
-        '^.+\\.(js|jsx|ts|tsx|mjs|cjs)$': 'babel-jest', // Transform JavaScript files (needed for Next.js)
+        '^.+\\.(ts|tsx)$': 'ts-jest',  // Let ts-jest handle TS/TSX files
     },
     moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/$1', // Resolve paths like @/some/path
+        '^@/(.*)$': '<rootDir>/$1',  // Resolve paths like @/some/path
     },
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'], // Optional: setup files if you need additional setup
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     collectCoverageFrom: [
         'pages/**/*.{ts,tsx}',
         'components/**/*.{ts,tsx}',
         'lib/**/*.{ts,tsx}',
-        'utils/**/*.{ts,tsx}', // Adjust for your project structure
+        'utils/**/*.{ts,tsx}',
     ],
-    coverageDirectory: './coverage', // Optional: set the coverage directory
+    coverageDirectory: './coverage',
 };
