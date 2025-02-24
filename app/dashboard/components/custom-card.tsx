@@ -3,11 +3,13 @@ import { Expand, EllipsisVerticalIcon } from "lucide-react";
 import React from "react";
 import CustomPopover from "./custom-popover";
 import {cn} from "@/lib/utils";
+import {useDraggable, useDroppable} from "@dnd-kit/core";
 
 type Props = {
   status: string;
   title: string;
   tag: string;
+  id: string;
   className?: string;
   dotOptions?: Array<{
     ic?: React.ReactNode;
@@ -16,14 +18,33 @@ type Props = {
 };
 
 const CustomCard = (props: Props) => {
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({
+        id: props?.id
+    })
+    const statusFormatted = props.status?.replaceAll('_','')
+    const style = transform ? {
+        transform: `translate(${transform.x}px, ${transform.y}px)`,
+        border:'1px solid white',
+        zIndex:50
+    } : undefined;
+
   return (
-    <Card className={cn('bg-custom_card border border-custom_card-border drop-shadow-lg rounded-3xl', props?.className)}
+    <Card
+        ref={setNodeRef}
+        {...listeners}
+        {...attributes}
+        style={style}
+        className={cn('bg-custom_card border border-custom_card-border drop-shadow-lg rounded-3xl', props?.className)}
     >
       <CardHeader className='w-full flex flex-row items-center justify-between gap-1.5'
       >
         <div className="w-full">
           <CardTitle
-              className="max-w-[80px] bg-custom_card-status_background text-custom_card-status_foreground rounded-[20px] text-[12px] font-normal text-center"
+              className={`max-w-[100px] rounded-[20px] text-[12px] font-normal text-center`}
+              style={{
+                  backgroundColor: `hsl(var(--card-status-${statusFormatted}-background))`,
+                  color: `hsl(var(--card-status-${statusFormatted}-foreground))`,
+              }}
           >
             {props.status}
           </CardTitle>

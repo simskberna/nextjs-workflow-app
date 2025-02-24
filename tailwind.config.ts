@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+import tailwindcss_animate from "tailwindcss-animate";
+
 export default {
   darkMode: ["class"],
   content: [
@@ -22,8 +24,15 @@ export default {
         custom_card:{
           DEFAULT: "hsl(var(--card-custom))",
           border: "hsl(var(--card-custom-border))",
-          status_foreground: "hsl(var(--card-status-foreground))",
-          status_background: "hsl(var(--card-status-background))",
+          status_INPROGRESS_foreground: "hsl(var(--card-status-INPROGRESS-foreground))",
+          status_ONHOLD_foreground: "hsl(var(--card-status-ONHOLD-foreground))",
+          status_BLOCKED_foreground: "hsl(var(--card-status-BLOCKED-foreground))",
+          status_COMPLETED_foreground: "hsl(var(--card-status-COMPLETED-foreground))",
+
+          status_INPROGRESS_background: "hsl(var(--card-status-INPROGRESS-background))",
+          status_ONHOLD_background: "hsl(var(--card-status-ONHOLD-background))",
+          status_BLOCKED_background: "hsl(var(--card-status-BLOCKED-background))",
+          status_COMPLETED_background: "hsl(var(--card-status-COMPLETED-background))",
         },
         custom_card_inner:{
           DEFAULT: "hsl(var(--card-custom-inner))",
@@ -116,5 +125,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcss_animate],
 } satisfies Config;

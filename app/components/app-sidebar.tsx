@@ -88,7 +88,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             }}
           >
             <Link href="/">
-              <Image src={logoImage} width={175} height={35} alt="logo" />
+              <Image src={logoImage} width={175} height={35} style={{width:'auto',height:'auto'}} alt="logo" priority />
             </Link>
           </SidebarGroupLabel>
           <SidebarMenu>

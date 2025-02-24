@@ -34,6 +34,7 @@ const Splash = () => {
             height={60}
             src="/assets/logos/logo_240_light.svg"
             className="xs:block lg:hidden"
+            priority
           />
         </Link>
 
@@ -83,6 +84,7 @@ const Splash = () => {
               width={240}
               height={50}
               alt="logo-light-footer"
+              priority
             />
           </div>
           <div className="flex md:flex-row xs:flex-col justify-center gap-8 mb-4">
